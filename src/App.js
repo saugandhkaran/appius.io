@@ -1,4 +1,5 @@
 import './App.scss';
+import './animation.css';
 import { useState } from 'react';
 import RoiForm from './components/RoiForm';
 import UsTile from './components/UsTile';
@@ -12,6 +13,7 @@ function App() {
     event.preventDefault();
     const formData = event.target;
     const obj = {};
+    let newItems = items;
     obj.name = formData.elements.name.value;
     obj.improvement = formData.elements.improvement.value;
     obj.affectedUsers = formData.elements.affectedUsers.value;
@@ -19,11 +21,11 @@ function App() {
     obj.storyPoints = formData.elements.storyPoints.value;
     obj.remarks = formData.elements.remarks.value;
     obj.metrics = [...formData.elements.metrics].filter((item) => item.checked).map((item) => item.value);
-    console.log(obj)
-    setItems([...items,obj]);
+    newItems.unshift(obj);
+    setItems([...newItems]);
   }
 
-  let usList = items.map((item) => <UsTile items={item} />);
+  let usList = items.map((item) => <UsTile items={item} key={item.name}/>);
   const prioritize = () => {
     startModal();
     const prioritizedItems = items.map((item) => {
@@ -41,7 +43,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App animate__animated animate__fadeIn">
       {showModal && <PriorityProgressModal totalItems={items.length} />}
       <div className="columns is-vcentered">
         <div className="roi-form column is-three-fifths">

@@ -28,7 +28,7 @@ function UsTile(props) {
     return <span key={index} className="tag is-light">{item}</span>
   })
   return (
-  <div className="card">
+    <div className="card animate__animated animate__slideInLeft">
     <header className="card-header">
       <p className="card-header-title">
           {props.items.name}
@@ -43,7 +43,7 @@ function UsTile(props) {
       <div className="content">
           Affects <b>{formula.affectedUsers[props.items.affectedUsers]} </b>
            of users at a <b>{formula.frequency[props.items.frequency]} </b> 
-          frequency and has the scope of improvement upto <b>
+          frequency and has the scope of impact upto <b>
             {formula.improvement[props.items.improvement]} </b>.
           {props.items.metrics.length > 0 && <p>It solves metrics like {metrics} </p>}
           {props.items.remarks && <p>Remarks - {props.items.remarks} </p>}

@@ -70,7 +70,7 @@ $input-shadow: none;
 }
 
 .progress-images {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 .modal {
@@ -85,4 +85,8 @@ $input-shadow: none;
 
 .checkbox input[type=checkbox] {
   margin-right: 10px;
+}
+.progress {
+  max-width: 400px;
+  margin: 0 auto;
 }

@@ -3,7 +3,7 @@ function RoiForm(props) {
     <form onSubmit={props.setObjectFunction}>
       <h4 className="title is-4 center">Backlog prioritisation tool for Product Owners</h4>
       <div className="field">
-        <label className="label">Epic / US / Bug / Spike</label>
+        <label className="label">Epic / US / Bug / Spike *</label>
         <div className="control">
           <input name="name" required className="input" type="text" placeholder="Epic / US / Bug / Spike" />
         </div>
@@ -75,7 +75,7 @@ function RoiForm(props) {
         <div className="field column">
           <label className="label">Remarks</label>
           <div className="control">
-            <input name="remarks" required className="input" type="text" placeholder="Remarks" />
+            <input name="remarks" className="input" type="text" placeholder="Remarks" />
           </div>
         </div>
       </div>
@@ -83,19 +83,19 @@ function RoiForm(props) {
         <label className="label">Phases of Customer Journey</label>
         <div className="columns">
           <label className="checkbox column">
-            <input type="checkbox" value="activation" name="metrics"/>
+            <input type="checkbox" value="Acquisition" name="metrics"/>
             Acquisition
           </label>
           <label className="checkbox column">
-            <input type="checkbox" value="retention" name="metrics"/>
+            <input type="checkbox" value="Onboarding" name="metrics"/>
             Onboarding
           </label>
           <label className="checkbox column">
-            <input type="checkbox" value="error solve" name="metrics"/>
+            <input type="checkbox" value="Activation" name="metrics"/>
             Activation
           </label>
           <label className="checkbox column">
-            <input type="checkbox" value="onboarding" name="metrics"/>
+            <input type="checkbox" value="Retention" name="metrics"/>
             Retention
           </label>
         </div>
