@@ -1,16 +1,16 @@
 function RoiForm(props) {
   return (
     <form onSubmit={props.setObjectFunction}>
-      <h4 className="title is-4 center">Logging form</h4>
+      <h4 className="title is-4 center">Backlog prioritisation tool for Product Owners</h4>
       <div className="field">
-        <label className="label">US or Epic</label>
+        <label className="label">Epic / US / Bug / Spike</label>
         <div className="control">
-          <input name="name" required className="input" type="text" placeholder="US or Epic" />
+          <input name="name" required className="input" type="text" placeholder="Epic / US / Bug / Spike" />
         </div>
       </div>
       <div className="columns">
         <div className="field column">
-          <label className="label">Improvement</label>
+          <label className="label">Impact</label>
           <div className="control">
             <div className="select">
               <select name="improvement">
@@ -24,7 +24,7 @@ function RoiForm(props) {
           </div>
         </div>
         <div className="field column">
-          <label className="label">Affected users</label>
+          <label className="label">% of affected users</label>
           <div className="control">
             <div className="select">
               <select name="affectedUsers">
@@ -39,7 +39,7 @@ function RoiForm(props) {
           </div>
         </div>
         <div className="field column">
-          <label className="label">Frequency</label>
+          <label className="label">Frequency of use case</label>
           <div className="control">
             <div className="select">
               <select name="frequency">
@@ -54,7 +54,7 @@ function RoiForm(props) {
           </div>
         </div>
         <div className="field column">
-          <label className="label">Story Points</label>
+          <label className="label">Effort (Story Points)</label>
           <div className="control">
             <div className="select">
               <select name="storyPoints">
@@ -72,23 +72,27 @@ function RoiForm(props) {
         </div>
       </div>
       <div className="field">
-        <label className="label">Metrics it solves</label>
+        <label className="label">Phases of Customer Journey</label>
         <div className="columns">
           <label className="checkbox column">
             <input type="checkbox" value="activation" name="metrics"/>
-            Activation
+            Acquisition
           </label>
           <label className="checkbox column">
             <input type="checkbox" value="retention" name="metrics"/>
-            Retention
+            Onboarding
           </label>
           <label className="checkbox column">
             <input type="checkbox" value="error solve" name="metrics"/>
-            Error solve
+            Activation
           </label>
           <label className="checkbox column">
             <input type="checkbox" value="onboarding" name="metrics"/>
-            Onboarding
+            Retention
+          </label>
+          <label className="checkbox column">
+            <input type="checkbox" value="upgrading" name="metrics"/>
+            Upgrading
           </label>
         </div>
       </div>
