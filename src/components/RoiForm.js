@@ -53,21 +53,29 @@ function RoiForm(props) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="columns">
         <div className="field column">
-          <label className="label">Effort (Story Points)</label>
+            <label className="label">Effort/ Story points</label>
+            <div className="control">
+              <div className="select">
+                <select name="storyPoints">
+                  <option value="10">0.5</option>
+                  <option value="20">1</option>
+                  <option value="30">2</option>
+                  <option value="40">3</option>
+                  <option value="50">5</option>
+                  <option value="60">8</option>
+                  <option value="70">13</option>
+                  <option value="80">21</option>
+                </select>
+              </div>
+          </div>
+        </div>
+        <div className="field column">
+          <label className="label">Remarks</label>
           <div className="control">
-            <div className="select">
-              <select name="storyPoints">
-                <option value="10">0.5</option>
-                <option value="20">1</option>
-                <option value="30">2</option>
-                <option value="40">3</option>
-                <option value="50">5</option>
-                <option value="60">8</option>
-                <option value="70">13</option>
-                <option value="80">21</option>
-              </select>
-            </div>
+            <input name="remarks" required className="input" type="text" placeholder="Remarks" />
           </div>
         </div>
       </div>
@@ -89,10 +97,6 @@ function RoiForm(props) {
           <label className="checkbox column">
             <input type="checkbox" value="onboarding" name="metrics"/>
             Retention
-          </label>
-          <label className="checkbox column">
-            <input type="checkbox" value="upgrading" name="metrics"/>
-            Upgrading
           </label>
         </div>
       </div>

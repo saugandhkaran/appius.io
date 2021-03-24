@@ -17,6 +17,7 @@ function App() {
     obj.affectedUsers = formData.elements.affectedUsers.value;
     obj.frequency = formData.elements.frequency.value;
     obj.storyPoints = formData.elements.storyPoints.value;
+    obj.remarks = formData.elements.remarks.value;
     obj.metrics = [...formData.elements.metrics].filter((item) => item.checked).map((item) => item.value);
     console.log(obj)
     setItems([...items,obj]);

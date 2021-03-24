@@ -46,6 +46,7 @@ function UsTile(props) {
           frequency and has the scope of improvement upto <b>
             {formula.improvement[props.items.improvement]} </b>.
           {props.items.metrics.length > 0 && <p>It solves metrics like {metrics} </p>}
+          {props.items.remarks && <p>Remarks - {props.items.remarks} </p>}
       </div>
     </div>
   </div>)
