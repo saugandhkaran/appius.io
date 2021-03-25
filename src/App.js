@@ -39,14 +39,14 @@ function App() {
     setShowModal(true);
     setTimeout(() => {
       setShowModal(false);
-    }, 4000);
+    }, 3000);
   }
 
   return (
     <div className="App animate__animated animate__fadeIn">
       {showModal && <PriorityProgressModal totalItems={items.length} />}
-      <div className="columns is-vcentered">
-        <div className="roi-form column is-three-fifths">
+      <div className="columns">
+        <div className="roi-form-section column is-three-fifths">
           <RoiForm setObjectFunction={ setObject }/>
         </div>
         <div className="list column">

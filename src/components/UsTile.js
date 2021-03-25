@@ -33,11 +33,10 @@ function UsTile(props) {
       <p className="card-header-title">
           {props.items.name}
       </p>
-      <button className="card-header-icon" aria-label="more options">
-        <span className="icon">
-            <b>{ props.items.prio }</b>
-        </span>
-      </button>
+        {props.items.prio && <div className="value-score center">
+          <p>VALUE SCORE</p>
+          <h4 className="title is-4">{props.items.prio}</h4>
+        </div>}
     </header>
     <div className="card-content">
       <div className="content">
@@ -45,8 +44,8 @@ function UsTile(props) {
            of users at a <b>{formula.frequency[props.items.frequency]} </b> 
           frequency and has the scope of impact upto <b>
             {formula.improvement[props.items.improvement]} </b>.
-          {props.items.metrics.length > 0 && <p>It solves metrics like {metrics} </p>}
-          {props.items.remarks && <p>Remarks - {props.items.remarks} </p>}
+          {props.items.metrics.length > 0 && <p>KPI - {metrics} </p>}
+          {props.items.remarks && <p>Extra info - {props.items.remarks} </p>}
       </div>
     </div>
   </div>)
