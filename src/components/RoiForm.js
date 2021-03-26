@@ -1,19 +1,20 @@
 function RoiForm(props) {
   return (
     <div>
-    <h4 className="title is-4 center roi-header">Backlog Prioritisation Tool</h4>
+    <h4 className="title is-4 center roi-header">Prioritisation Tool</h4>
     <form className="roi-form" onSubmit={props.setObjectFunction}>
       <div className="field">
         <div className="control">
-          <input name="name" required className="input" type="text" placeholder="Epic or User Story*" />
+          <input name="name" required className="input" type="text" placeholder="Type task here*" />
         </div>
       </div>
       <div className="columns">
         <div className="field column">
-          <label className="label">Customer Impact</label>
+          <label className="label">Customer Value</label>
           <div className="control">
             <div className="select">
-              <select name="improvement">
+                <select required name="improvement">
+                <option value="">Select</option>
                 <option value="1">Less than 1x</option>
                 <option value="2">No change</option>
                 <option value="3">1x - 2x</option>
@@ -24,10 +25,11 @@ function RoiForm(props) {
           </div>
         </div>
         <div className="field column">
-          <label className="label">% of affected users</label>
+          <label className="label">% of impacted users</label>
           <div className="control">
             <div className="select">
-              <select name="affectedUsers">
+                <select required name="affectedUsers">
+                <option value="">Select</option>
                 <option value="1">Less than 10%</option>
                 <option value="2">10 - 19%</option>
                 <option value="3">20% - 49%</option>
@@ -42,7 +44,8 @@ function RoiForm(props) {
           <label className="label">Frequency of use case</label>
           <div className="control">
             <div className="select">
-              <select name="frequency">
+              <select required name="frequency">
+                <option value="">Select</option>
                 <option value="6">Daily</option>
                 <option value="5">Few times a week</option>
                 <option value="4">Weekly</option>
@@ -59,7 +62,8 @@ function RoiForm(props) {
             <label className="label">Story points</label>
             <div className="control">
               <div className="select">
-                <select name="storyPoints">
+                <select required name="storyPoints">
+                  <option value="">Select</option>
                   <option value="10">0.5</option>
                   <option value="20">1</option>
                   <option value="30">2</option>
@@ -72,12 +76,12 @@ function RoiForm(props) {
               </div>
           </div>
         </div>
-        <div className="field column">
+        {/* <div className="field column">
           <label className="label">Extra info</label>
           <div className="control">
             <input name="remarks" className="input" type="text" placeholder="Extra info" />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="field">
         <label className="label">KPI Section</label>

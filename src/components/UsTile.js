@@ -40,12 +40,12 @@ function UsTile(props) {
     </header>
     <div className="card-content">
       <div className="content">
-          Affects <b>{formula.affectedUsers[props.items.affectedUsers]} </b>
+          Impacts <b>{formula.affectedUsers[props.items.affectedUsers]} </b>
            of users at a <b>{formula.frequency[props.items.frequency]} </b> 
-          frequency and has the scope of impact upto <b>
+          frequency and has the scope of improvement upto <b>
             {formula.improvement[props.items.improvement]} </b>.
           {props.items.metrics.length > 0 && <p>KPI - {metrics} </p>}
-          {props.items.remarks && <p>Extra info - {props.items.remarks} </p>}
+          {/* {props.items.remarks && <p>Extra info - {props.items.remarks} </p>} */}
       </div>
     </div>
   </div>)
