@@ -68,6 +68,9 @@ $input-shadow: none;
     margin-top: 20px;
     position: sticky;
     bottom: 0%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   };
 }
 
@@ -108,4 +111,15 @@ $input-shadow: none;
 
 .roi-header {
   margin-bottom: 50px;
+}
+
+.confirmation-modal {
+  p, .title {
+    margin-bottom: 10px;
+  }
+  .modal-content {
+    button {
+      margin: 10px;
+    }
+  }
 }

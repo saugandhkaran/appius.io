@@ -5,13 +5,11 @@ import scanning from '../assets/scanning.svg';
 function PriorityProgressModal(props) {
   let images = [scanning, calculating, arranging];
   return (
-    <div className="modal is-active">
+    <div className="modal animate__animated animate__fadeIn is-active">
     <div className="modal-background"></div>
       <div className="modal-content center">
         <div className="columns">
-          {/* <div className="column"><img className="progress-images" src={images[0]} /><p className="center">Scanning your stories and epics</p></div> */}
           <div className="column"><img className="progress-images" src={images[1]} /><p className="center">Calculating priority</p></div>
-          {/* <div className="column"><img className="progress-images" src={images[2]} /><p className="center">Rearranging stories and epics</p></div> */}
         </div>
         <progress className="progress is-small is-info" max="100"></progress>
       </div>

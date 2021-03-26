@@ -5,10 +5,13 @@ import RoiForm from './components/RoiForm';
 import UsTile from './components/UsTile';
 import noResultImage from '../src/assets/no-result.svg';
 import PriorityProgressModal from './components/PriorityProgressModal';
+import ConfirmationModal from './components/ConfirmationModal';
+import JsonTOCSV from './components/JsonToCSV';
 
 function App() {
   const [items, setItems] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showClearConfirmation, setShowClearConfirmation] = useState(false);
   const setObject = (event) => {
     event.preventDefault();
     const formData = event.target;
@@ -36,6 +39,19 @@ function App() {
     setItems([...prioritizedItems]);
   }
 
+  const clearAllItems = () => {
+    setItems([]);
+    setShowClearConfirmation(false);
+  }
+
+  const deleteInfo = {
+      type: 'clear',
+      typeAction: clearAllItems,
+      title: 'Are you sure you want to clear the list?',
+      description: 'Once deleted, you will lose the tasks along with the value score.',
+      closeModal: () => setShowClearConfirmation(false)
+  }
+
   const startModal = () => {
     setShowModal(true);
     setTimeout(() => {
@@ -45,6 +61,7 @@ function App() {
 
   return (
     <div className="App animate__animated animate__fadeIn">
+      {showClearConfirmation && <ConfirmationModal modalInfo={deleteInfo} />}
       {showModal && <PriorityProgressModal totalItems={items.length} />}
       <div className="columns">
         <div className="roi-form-section column is-three-fifths">
@@ -57,7 +74,11 @@ function App() {
             <p>There are no US or epics added to prioritise yet. Add a user story or epic by filling the Logging form.</p>
           </div> }
           {usList}
-          {items.length > 0 && <button className="button list-button is-primary" onClick={prioritize}>Prioritise</button>}
+          {items.length > 0 && <div className="list-button">
+            <button className="button is-success" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
+            <button className="button is-primary" onClick={prioritize}>Prioritise</button>
+            <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
+          </div>}
         </div>
       </div>
     </div>
