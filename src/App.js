@@ -19,9 +19,9 @@ function App() {
     let newItems = items;
     obj.name = formData.elements.name.value;
     obj.improvement = formData.elements.improvement.value;
-    obj.affectedUsers = formData.elements.affectedUsers.value;
+    obj.impactedUsers = formData.elements.impactedUsers.value;
     obj.frequency = formData.elements.frequency.value;
-    obj.storyPoints = formData.elements.storyPoints.value;
+    obj.efforts = formData.elements.efforts.value;
     // obj.remarks = formData.elements.remarks.value;
     obj.metrics = [...formData.elements.metrics].filter((item) => item.checked).map((item) => item.value);
     newItems.unshift(obj);
@@ -33,7 +33,7 @@ function App() {
   const prioritize = () => {
     startModal();
     const prioritizedItems = items.map((item) => {
-      item.prio = ((+item.improvement * +item.affectedUsers * +item.frequency * (item.metrics.length + 1)) / item.storyPoints).toFixed(1);
+      item.prio = ((+item.improvement * +item.impactedUsers * +item.frequency * (item.metrics.length + 1)) / item.efforts).toFixed(1);
       return item;
     }).sort((a, b) => b.prio - a.prio);
     setItems([...prioritizedItems]);

@@ -2,7 +2,7 @@ import exportFromJSON from 'export-from-json'
 
 function JsonTOCSV(dataArray) {
   const formula = {
-    affectedUsers: {
+    impactedUsers: {
       '6': '100%',
       '5': '80% - 99%',
       '4': '50% - 79%',
@@ -19,15 +19,16 @@ function JsonTOCSV(dataArray) {
       '1': 'Once a year or less'
     },
     improvement: {
-      '5': '10x or more',
-      '4': '2x or more',
-      '3': '1x - 2x',
-      '2': 'No change',
-      '1': 'Less than 1x'
+      '6': '100%',
+      '5': '80% - 99%',
+      '4': '50% - 79%',
+      '3': '20% - 49%',
+      '2': '10 - 19%',
+      '1': 'Less than 10%'
     }
   }
   const data = dataArray.map(item => {
-      item.affectedUsers = formula.affectedUsers[item.affectedUsers];
+      item.impactedUsers = formula.impactedUsers[item.impactedUsers];
       item.frequency = formula.frequency[item.frequency];
       item.improvement = formula.improvement[item.improvement];
       return item;

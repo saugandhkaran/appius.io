@@ -1,6 +1,6 @@
 function UsTile(props) {
   const formula = {
-    affectedUsers: {
+    impactedUsers: {
       '6': '100%',
       '5': '80% - 99%',
       '4': '50% - 79%',
@@ -17,11 +17,20 @@ function UsTile(props) {
       '1': 'Once a year or less'
     },
     improvement: {
-      '5': '10x or more',
-      '4': '2x or more',
-      '3': '1x - 2x',
-      '2': 'No change',
-      '1': 'Less than 1x'
+      '6': '100%',
+      '5': '80% - 99%',
+      '4': '50% - 79%',
+      '3': '20% - 49%',
+      '2': '10 - 19%',
+      '1': 'Less than 10%'
+    },
+    effort: {
+      '60': 'XXL',
+      '50': 'XL',
+      '40': 'L',
+      '30': 'M',
+      '20': 'S',
+      '10': 'XS'
     }
   }
   let metrics = props.items.metrics.map((item, index) => {
@@ -40,7 +49,7 @@ function UsTile(props) {
     </header>
     <div className="card-content">
       <div className="content">
-          Impacts <b>{formula.affectedUsers[props.items.affectedUsers]} </b>
+          Impacts <b>{formula.impactedUsers[props.items.impactedUsers]} </b>
            of users at a <b>{formula.frequency[props.items.frequency]} </b> 
           frequency and has the scope of improvement upto <b>
             {formula.improvement[props.items.improvement]} </b>.
