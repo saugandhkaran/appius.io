@@ -73,7 +73,7 @@ function App() {
           <h4 className="title is-4 center">Prioritisation List</h4>
           { items.length === 0 && <div className="center">
             <img className="noresult-image" src={noResultImage} />
-            <p>There are no US or epics added to prioritise yet. Add a user story or epic by filling the Logging form.</p>
+            <p>There are no tasks added to prioritise yet. Let's get started by adding a task by filling the form on the left.</p>
           </div> }
           {usList}
           {items.length > 0 && <div className="list-button">
