@@ -10,6 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <TheHeader />
     <App />
+    <p className="center"><b>P.S</b>: Your data is not stored by us.</p>
   </React.StrictMode>,
   document.getElementById('root')
 );

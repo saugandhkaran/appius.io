@@ -32,11 +32,13 @@ function App() {
   let usList = items.map((item) => <UsTile items={item} key={item.name}/>);
   const prioritize = () => {
     startModal();
-    const prioritizedItems = items.map((item) => {
-      item.prio = ((+item.improvement * +item.impactedUsers * +item.frequency * (item.metrics.length + 1)) / item.efforts).toFixed(1);
-      return item;
-    }).sort((a, b) => b.prio - a.prio);
-    setItems([...prioritizedItems]);
+    setTimeout(() => {
+      const prioritizedItems = items.map((item) => {
+        item.prio = ((+item.improvement * +item.impactedUsers * +item.frequency * (item.metrics.length + 1)) / item.efforts).toFixed(1);
+        return item;
+      }).sort((a, b) => b.prio - a.prio);
+      setItems([...prioritizedItems]);
+    }, 2000);
   }
 
   const clearAllItems = () => {
@@ -76,7 +78,7 @@ function App() {
           {usList}
           {items.length > 0 && <div className="list-button">
             <button className="button is-primary" onClick={prioritize}>Prioritise</button>
-            <div class="additional-buttons">
+            <div className="additional-buttons">
               <button className="button is-excel" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
               <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
             </div>
