@@ -23,6 +23,7 @@ function App() {
     obj.metrics = [...formData.elements.metrics].filter((item) => item.checked).map((item) => item.value);
     newItems.unshift(obj);
     setItems([...newItems]);
+    formData.reset();
   }
 
   let usList = items.map((item) => <UsTile items={item} key={item.name}/>);
