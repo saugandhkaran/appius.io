@@ -108,7 +108,7 @@ function RoiForm(props) {
       </div>
       </form>
       <br /><br />
-      <p>Please help us helping the customer win by sending your feedback: <a href = "mailto: titlesboreme@gmail.com">Send Feedback</a></p>
+      <p>Help the customer win by sending your feedback: <a href = "mailto: titlesboreme@gmail.com">Send Feedback</a></p>
   </div>
   )
 }
