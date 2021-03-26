@@ -75,9 +75,11 @@ function App() {
           </div> }
           {usList}
           {items.length > 0 && <div className="list-button">
-            <button className="button is-excel" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
             <button className="button is-primary" onClick={prioritize}>Prioritise</button>
-            <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
+            <div class="additional-buttons">
+              <button className="button is-excel" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
+              <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
+            </div>
           </div>}
         </div>
       </div>

@@ -67,10 +67,18 @@ $input-shadow: none;
   .list-button {
     margin-top: 20px;
     position: sticky;
+    background-color: rgb(198, 198, 198, 0.7);
+    padding: 10px;
     bottom: 0%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
+      .additional-buttons {
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
   };
 }
 

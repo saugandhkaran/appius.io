@@ -106,7 +106,10 @@ function RoiForm(props) {
       <div className="field column center">
         <button className="button is-primary" type="submit">Add for prioritisation</button>
       </div>
-    </form>
+      </form>
+      <br /><br />
+      <p><b>P.S</b>: Your data is not stored by us.</p>
+      <p>Please help us helping the customer win by sending your feedback: <a href = "mailto: titlesboreme@gmail.com">Send Feedback</a></p>
   </div>
   )
 }
