@@ -123,3 +123,10 @@ $input-shadow: none;
     }
   }
 }
+
+.button {
+  &.is-excel {
+    background-color: #1D6F42;
+    color: white;
+  }
+}
