@@ -10,7 +10,12 @@ function RoiForm(props) {
       </div>
       <div className="columns">
         <div className="field column">
-          <label className="label">Customer Value</label>
+            <label className="label">Customer Value
+            <span className="info"
+                type="tooltip"
+                data-description="Customer value can be defined as the value that is added to the customer by modifiying 
+                an existing functionality or creating a new functionality. It can be defined as how much is the task going to ease the
+                 journey of a customer.">i</span></label>
           <div className="control">
             <div className="select">
                 <select required name="improvement">
@@ -26,7 +31,11 @@ function RoiForm(props) {
           </div>
         </div>
         <div className="field column">
-          <label className="label">% of impacted users</label>
+            <label className="label">Impacted users
+            <span className="info"
+                type="tooltip"
+                data-description="Focus on positive impact. How much percentage of your existing users will be positively impacted
+                 after implementing this task?">i</span></label>
           <div className="control">
             <div className="select">
                 <select required name="impactedUsers">
@@ -42,7 +51,10 @@ function RoiForm(props) {
           </div>
         </div>
         <div className="field column">
-          <label className="label">Frequency of use case</label>
+            <label className="label">Frequency of use case
+            <span className="info"
+                type="tooltip"
+                data-description="How often does the customer experience the issue that is solved by the task?">i</span></label>
           <div className="control">
             <div className="select">
               <select required name="frequency">
@@ -60,7 +72,11 @@ function RoiForm(props) {
       </div>
       <div className="columns">
         <div className="field column">
-          <label className="label">Effort</label>
+            <label className="label">Effort
+            <span className="info"
+                type="tooltip"
+                data-description="What is the effort needed to complete the task?
+                XXL being the highest and XS being the lowest.">i</span></label>
           <div className="control">
             <div className="select">
               <select required name="efforts">
@@ -76,7 +92,11 @@ function RoiForm(props) {
           </div>
           </div>
           <div className="field column">
-            <label className="label">Dependency</label>
+            <label className="label">Dependency
+              <span className="info"
+                type="tooltip"
+                data-description="Are there any dependencies on other teams to complete this task?">i</span>
+            </label>
             <div className="control">
               <div className="select">
                 <select required name="dependency">

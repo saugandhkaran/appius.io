@@ -138,3 +138,34 @@ $input-shadow: none;
     color: white;
   }
 }
+
+label {
+  span[type=tooltip] {
+    &.info {
+      background-color: rgb(179, 178, 178);
+      border-radius: 20px;
+      padding: 2px 7px;
+      margin-left: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 12px;
+      position: relative;
+      &::after {
+        display: none;
+      }
+      &:hover{
+        width: 100px;
+        height: 100px;
+        &::after {
+          content: attr(data-description);
+          display: block;
+          position: absolute;
+          background-color: grey;
+          z-index: 10001;
+          padding: 10px;
+          min-width: 250px;
+        }
+      }
+    }
+  }
+}
