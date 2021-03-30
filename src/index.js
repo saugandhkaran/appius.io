@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import 'bulma'
+import 'bulma';
 import App from './App';
 import TheHeader from './components/TheHeader';
 import reportWebVitals from './reportWebVitals';

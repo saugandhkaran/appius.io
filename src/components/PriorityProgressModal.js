@@ -9,7 +9,7 @@ function PriorityProgressModal(props) {
     <div className="modal-background"></div>
       <div className="modal-content center">
         <div className="columns">
-          <div className="column"><img className="progress-images" src={images[1]} /><p className="center">Calculating priority</p></div>
+          <div className="column"><img className="progress-images" alt="Calculating" src={images[1]} /><p className="center">Calculating priority</p></div>
         </div>
         <progress className="progress is-small is-info" max="100"></progress>
       </div>

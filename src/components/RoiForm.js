@@ -60,21 +60,35 @@ function RoiForm(props) {
       </div>
       <div className="columns">
         <div className="field column">
-            <label className="label">Effort</label>
+          <label className="label">Effort</label>
+          <div className="control">
+            <div className="select">
+              <select required name="efforts">
+                <option value="">Select</option>
+                <option value="10">XS</option>
+                <option value="20">S</option>
+                <option value="30">M</option>
+                <option value="40">L</option>
+                <option value="50">XL</option>
+                <option value="60">XXL</option>
+              </select>
+            </div>
+          </div>
+          </div>
+          <div className="field column">
+            <label className="label">Dependency</label>
             <div className="control">
               <div className="select">
-                <select required name="efforts">
+                <select required name="dependency">
                   <option value="">Select</option>
-                  <option value="10">XS</option>
-                  <option value="20">S</option>
-                  <option value="30">M</option>
-                  <option value="40">L</option>
-                  <option value="50">XL</option>
-                  <option value="60">XXL</option>
+                  <option value="3">Low (Dependent on &#60;= 1 )</option>
+                  <option value="2">Medium (Dependent on 2 - 3)</option>
+                  <option value="1">High (Dependent on &#62;3 teams)</option>
                 </select>
               </div>
+            </div>
           </div>
-        </div>
+          
         {/* <div className="field column">
           <label className="label">Extra info</label>
           <div className="control">
@@ -108,7 +122,7 @@ function RoiForm(props) {
       </div>
       </form>
       <br /><br />
-      <p>Help the customer win by sending your feedback: <a href = "mailto: titlesboreme@gmail.com">Send Feedback</a></p>
+      <p>Help the customer win by sending your feedback: <a href="mailto: titlesboreme@gmail.com">Send Feedback</a></p>
   </div>
   )
 }

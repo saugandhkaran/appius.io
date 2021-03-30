@@ -74,7 +74,20 @@ function RoiForm(props) {
                 </select>
               </div>
           </div>
-        </div>
+          </div>
+          <div className="field column">
+            <label className="label">Dependency</label>
+            <div className="control">
+              <div className="select">
+                <select required name="dependency">
+                  <option value="">Select</option>
+                  <option value="1">High</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Low</option>
+                </select>
+              </div>
+            </div>
+          </div>
         {/* <div className="field column">
           <label className="label">Extra info</label>
           <div className="control">
@@ -104,7 +117,7 @@ function RoiForm(props) {
         </div>
       </div>
       <div className="field column center">
-        <button className="button is-primary" type="submit">Add for prioritisation</button>
+          <button className="button is-primary" type="submit">Add for prioritisation</button>
       </div>
     </form>
   </div>

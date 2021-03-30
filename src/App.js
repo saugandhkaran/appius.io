@@ -22,6 +22,7 @@ function App() {
     obj.impactedUsers = formData.elements.impactedUsers.value;
     obj.frequency = formData.elements.frequency.value;
     obj.efforts = formData.elements.efforts.value;
+    obj.dependency = formData.elements.dependency.value;
     // obj.remarks = formData.elements.remarks.value;
     obj.metrics = [...formData.elements.metrics].filter((item) => item.checked).map((item) => item.value);
     newItems.unshift(obj);
@@ -34,7 +35,7 @@ function App() {
     startModal();
     setTimeout(() => {
       const prioritizedItems = items.map((item) => {
-        item.prio = ((+item.improvement * +item.impactedUsers * +item.frequency * (item.metrics.length + 1)) / item.efforts).toFixed(1);
+        item.prio = ((+item.improvement * +item.impactedUsers * +item.frequency * +item.dependency * (item.metrics.length + 1)) / item.efforts).toFixed(1);
         return item;
       }).sort((a, b) => b.prio - a.prio);
       setItems([...prioritizedItems]);
@@ -72,7 +73,7 @@ function App() {
         <div className="list column">
           <h4 className="title is-4 center">Prioritisation List</h4>
           { items.length === 0 && <div className="center">
-            <img className="noresult-image" src={noResultImage} />
+            <img className="noresult-image" src={noResultImage} alt="No results"/>
             <p>There are no tasks added to prioritise yet. <br />Get started by adding a task.</p>
           </div> }
           {usList}
