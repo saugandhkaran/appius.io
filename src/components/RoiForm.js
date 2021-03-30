@@ -120,7 +120,7 @@ function RoiForm(props) {
           <label className="label">KPI Section
           <span className="info"
                 type="tooltip"
-                data-description="Which KPIs is it completion of this task help you in? Multiple KPIs can be selected.">i</span></label>
+                data-description="Which KPIs does completion of this task help you in? Multiple KPIs can be selected.">i</span></label>
         <div className="columns">
           <label className="checkbox column">
             <input type="checkbox" value="Acquisition" name="metrics"/>
