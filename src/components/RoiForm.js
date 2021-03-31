@@ -13,9 +13,8 @@ function RoiForm(props) {
             <label className="label">Customer Value
             <span className="info"
                 type="tooltip"
-                data-description="Customer value can be defined as the value that is added to the customer by modifiying 
-                an existing functionality or creating a new functionality. It can be defined as how much is the task going to ease the
-                 journey of a customer.">i</span></label>
+                data-description="This can be defined as the perceived value by the customer when modifying or creating this
+                 feature. Think about how much is this task is going to ease the journey of the customer.">i</span></label>
           <div className="control">
             <div className="select">
                 <select required name="improvement">
