@@ -1,0 +1,128 @@
+.center {
+    text-align: center;
+  }
+  
+  .roi-form-section {
+    display: flex;
+    padding: 85px 5px;
+    justify-content: center;
+  }
+  
+  .noresult-image {
+    max-width: 200px;
+  }
+  
+  .list {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    overflow-y: scroll;
+    margin: 85px 0px;
+    border: 1px dashed blueviolet;
+  
+    .list-button {
+      margin-top: 20px;
+      position: sticky;
+      background-color: rgb(198, 198, 198, 0.7);
+      padding: 10px;
+      bottom: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+        .additional-buttons {
+          margin-top: 5px;
+          display: flex;
+          justify-content: space-between;
+        }
+    };
+  }
+  
+  .progress-images {
+    max-width: 300px;
+  }
+  
+  .modal {
+    p{
+      color: white;
+    }
+  }
+  
+  .card {
+    margin-bottom: 5px;
+  }
+  
+  .checkbox input[type=checkbox] {
+    margin-right: 10px;
+  }
+  .progress {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .value-score {
+    background-color: #ffe6f7;
+    p {
+      font-size: 0.8em;
+      color: grey;
+      padding: 2px 10px;
+    }
+  }
+  
+  .roi-form {
+    padding-top: 40px;
+  }
+  
+  .roi-header {
+    margin-bottom: 50px;
+  }
+  
+  .confirmation-modal {
+    p, .title {
+      margin-bottom: 10px;
+    }
+    .modal-content {
+      button {
+        margin: 10px;
+      }
+    }
+  }
+  
+  .button {
+    &.is-excel {
+      background-color: #1D6F42;
+      color: white;
+    }
+  }
+  
+  label {
+    span[type=tooltip] {
+      &.info {
+        background-color: rgb(179, 178, 178);
+        border-radius: 20px;
+        padding: 2px 7px;
+        margin-left: 5px;
+        color: white;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        &::after {
+          display: none;
+        }
+        &:hover{
+          width: 100px;
+          height: 100px;
+          &::after {
+            content: attr(data-description);
+            display: block;
+            position: absolute;
+            background-color: grey;
+            z-index: 10001;
+            padding: 10px;
+            min-width: 250px;
+          }
+        }
+      }
+    }
+  }

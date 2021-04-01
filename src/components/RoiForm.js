@@ -100,7 +100,8 @@ function RoiForm(props) {
               <div className="select">
                 <select required name="dependency">
                   <option value="">Select</option>
-                  <option value="3">Low (Dependent on &#60;= 1 team)</option>
+                  <option value="4">No dependency</option>
+                  <option value="3">Low (Dependent on 1 team)</option>
                   <option value="2">Medium (Dependent on 2 - 3 teams)</option>
                   <option value="1">High (Dependent on &#62;3 teams)</option>
                 </select>
