@@ -33,7 +33,7 @@ export default function FormEntries() {
             '10': 'XS'
           },
           dependency: {
-            '1': 'High (Dependent on &#62;3 teams)',
+            '1': 'High (Dependent on >3 teams)',
             '2': 'Medium (Dependent on 2 - 3 teams)',
             '3': 'Low (Dependent on 1 team)',
             '4': 'No dependency'
