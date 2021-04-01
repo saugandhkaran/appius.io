@@ -1,4 +1,32 @@
+import FormEntries from '../resources/data/FormEntries';
 function RoiForm(props) {
+  const formEntries = new FormEntries();
+  const improvementOptions = Object.keys(formEntries.improvement).map((item) => {
+    return (
+      <option value={item} key={item}>{formEntries.improvement[item]}</option>
+    )
+  });
+  const impactedUsersOptions = Object.keys(formEntries.impactedUsers).map((item) => {
+    return (
+      <option value={item} key={item}>{formEntries.impactedUsers[item]}</option>
+    )
+  });
+  const frequencyOptions = Object.keys(formEntries.frequency).map((item) => {
+    return (
+      <option value={item} key={item}>{formEntries.frequency[item]}</option>
+    )
+  });
+  const effortOptions = Object.keys(formEntries.effort).map((item) => {
+    return (
+      <option value={item} key={item}>{formEntries.effort[item]}</option>
+    )
+  });
+  const dependencyOptions = Object.keys(formEntries.dependency).map((item) => {
+    return (
+      <option value={item} key={item}>{formEntries.dependency[item]}</option>
+    )
+  });
+
   return (
     <div>
     <h4 className="title is-4 center roi-header">Prioritisation Tool</h4>
@@ -19,12 +47,7 @@ function RoiForm(props) {
             <div className="select">
                 <select required name="improvement">
                 <option value="">Select</option>
-                <option value="1">Less than 10%</option>
-                <option value="2">10 - 19%</option>
-                <option value="3">20% - 49%</option>
-                <option value="4">50% - 79%</option>
-                <option value="5">80% - 99%</option>
-                <option value="6">100%</option>
+                {improvementOptions}
               </select>
             </div>
           </div>
@@ -39,12 +62,7 @@ function RoiForm(props) {
             <div className="select">
                 <select required name="impactedUsers">
                 <option value="">Select</option>
-                <option value="1">Less than 10%</option>
-                <option value="2">10 - 19%</option>
-                <option value="3">20% - 49%</option>
-                <option value="4">50% - 79%</option>
-                <option value="5">80% - 99%</option>
-                <option value="6">100%</option>
+                {impactedUsersOptions}
               </select>
             </div>
           </div>
@@ -58,12 +76,7 @@ function RoiForm(props) {
             <div className="select">
               <select required name="frequency">
                 <option value="">Select</option>
-                <option value="6">Daily</option>
-                <option value="5">Few times a week</option>
-                <option value="4">Weekly</option>
-                <option value="3">Monthly</option>
-                <option value="2">Few times a year</option>
-                <option value="1">Once a year or less</option>
+                {frequencyOptions}
               </select>
             </div>
           </div>
@@ -80,12 +93,7 @@ function RoiForm(props) {
             <div className="select">
               <select required name="efforts">
                 <option value="">Select</option>
-                <option value="10">XS</option>
-                <option value="20">S</option>
-                <option value="30">M</option>
-                <option value="40">L</option>
-                <option value="50">XL</option>
-                <option value="60">XXL</option>
+                {effortOptions}
               </select>
             </div>
           </div>
@@ -100,10 +108,7 @@ function RoiForm(props) {
               <div className="select">
                 <select required name="dependency">
                   <option value="">Select</option>
-                  <option value="4">No dependency</option>
-                  <option value="3">Low (Dependent on 1 team)</option>
-                  <option value="2">Medium (Dependent on 2 - 3 teams)</option>
-                  <option value="1">High (Dependent on &#62;3 teams)</option>
+                  {dependencyOptions}
                 </select>
               </div>
             </div>

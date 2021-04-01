@@ -1,44 +1,6 @@
+import formEntries from '../resources/data/FormEntries';
 function UsTile(props) {
-  const formula = {
-    impactedUsers: {
-      '6': '100%',
-      '5': '80% - 99%',
-      '4': '50% - 79%',
-      '3': '20% - 49%',
-      '2': '10 - 19%',
-      '1': 'Less than 10%'
-    },
-    frequency: {
-      '6': 'Daily',
-      '5': 'Few times a week',
-      '4': 'Weekly',
-      '3': 'Monthly',
-      '2': 'Few times a year',
-      '1': 'Once a year or less'
-    },
-    improvement: {
-      '6': '100%',
-      '5': '80% - 99%',
-      '4': '50% - 79%',
-      '3': '20% - 49%',
-      '2': '10 - 19%',
-      '1': 'Less than 10%'
-    },
-    effort: {
-      '60': 'XXL',
-      '50': 'XL',
-      '40': 'L',
-      '30': 'M',
-      '20': 'S',
-      '10': 'XS'
-    },
-    dependency: {
-      '1': 'High',
-      '2': 'Medium',
-      '3': 'Low',
-      '4': 'No dependency'
-    }
-  }
+  const formula = new formEntries();
   let metrics = props.items.metrics.map((item, index) => {
     return <span key={index} className="tag is-light">{item}</span>
   })

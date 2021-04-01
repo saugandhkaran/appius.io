@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './PrioritisationTool.scss';
 import RoiForm from '../../components/RoiForm';
 import UsTile from '../../components/UsTile';
-import noResultImage from '../../assets/no-result.svg';
+import noResultImage from '../../resources/assets/no-result.svg';
 import PriorityProgressModal from '../../components/PriorityProgressModal';
 import ConfirmationModal from '../../components/ConfirmationModal';
 import JsonTOCSV from '../../utils/JsonToCSV';
