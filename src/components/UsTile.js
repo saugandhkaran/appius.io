@@ -33,9 +33,10 @@ function UsTile(props) {
       '10': 'XS'
     },
     dependency: {
-      '3': 'High',
+      '1': 'High',
       '2': 'Medium',
-      '1': 'Low'
+      '3': 'Low',
+      '4': 'No dependency'
     }
   }
   let metrics = props.items.metrics.map((item, index) => {
@@ -60,7 +61,6 @@ function UsTile(props) {
             {formula.improvement[props.items.improvement]} </b>
             It has <b>{formula.dependency[props.items.dependency]} </b>dependency on other teams.
           {props.items.metrics.length > 0 && <p>KPI - {metrics} </p>}
-          {/* {props.items.remarks && <p>Extra info - {props.items.remarks} </p>} */}
       </div>
     </div>
   </div>)
