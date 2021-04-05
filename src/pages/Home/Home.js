@@ -11,7 +11,8 @@ function Home() {
           <div className="center">
             <Link to="/prioritytool"><button className="button is-info">Get started</button></Link>
           </div>
-          <p className="bottom center">Agile is more a “direction,” <br />than an “end,” <br />a philosophy and mindset at board level.</p>
+          <p className="bottom center">Agile is more a “direction,” <br />than an “end,” <br />a philosophy and mindset at broad level.</p>
+          <p className="subline center">-Pearl Zhu, Digital Agility: The Rocky Road from Doing Agile to Being Agile.</p>
         </div>
       </div>
       <div className="column right-section">
