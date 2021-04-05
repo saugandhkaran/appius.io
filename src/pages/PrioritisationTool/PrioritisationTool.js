@@ -6,6 +6,8 @@ import noResultImage from '../../resources/assets/no-result.svg';
 import PriorityProgressModal from '../../components/PriorityProgressModal';
 import ConfirmationModal from '../../components/ConfirmationModal';
 import JsonTOCSV from '../../utils/JsonToCSV';
+import Header from '../../components/TheHeader';
+import TheHeader from '../../components/TheHeader';
 
 function PrioritisationTool() {
   const [items, setItems] = useState([]);
@@ -29,7 +31,7 @@ function PrioritisationTool() {
     formData.reset();
   }
 
-  let usList = items.map((item) => <UsTile items={item} key={item.name}/>);
+  let usList = items.map((item) => <UsTile items={item} key={item.name} />);
   const prioritize = () => {
     startModal();
     setTimeout(() => {
@@ -47,11 +49,11 @@ function PrioritisationTool() {
   }
 
   const deleteInfo = {
-      type: 'clear',
-      typeAction: clearAllItems,
-      title: 'Are you sure you want to clear the list?',
-      description: 'Once deleted, you will lose the tasks along with the value score.',
-      closeModal: () => setShowClearConfirmation(false)
+    type: 'clear',
+    typeAction: clearAllItems,
+    title: 'Are you sure you want to clear the list?',
+    description: 'Once deleted, you will lose the tasks along with the value score.',
+    closeModal: () => setShowClearConfirmation(false)
   }
 
   const startModal = () => {
@@ -62,27 +64,30 @@ function PrioritisationTool() {
   }
 
   return (
-    <div className="prioritisation-tool animate__animated animate__fadeIn">
-      {showClearConfirmation && <ConfirmationModal modalInfo={deleteInfo} />}
-      {showModal && <PriorityProgressModal totalItems={items.length} />}
-      <div className="columns">
-        <div className="roi-form-section column is-three-fifths">
-          <RoiForm setObjectFunction={ setObject }/>
-        </div>
-        <div className="list column">
-          <h4 className="title is-4 center">Prioritisation List</h4>
-          { items.length === 0 && <div className="center">
-            <img className="noresult-image" src={noResultImage} alt="No results"/>
-            <p>There are no tasks added to prioritise yet. <br />Get started by adding a task.</p>
-          </div> }
-          {usList}
-          {items.length > 0 && <div className="list-button">
-            <button className="button is-primary" onClick={prioritize}>Prioritise</button>
-            <div className="additional-buttons">
-              <button className="button is-excel" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
-              <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
-            </div>
-          </div>}
+    <div>
+      <TheHeader />
+      <div className="prioritisation-tool animate__animated animate__fadeIn">
+        {showClearConfirmation && <ConfirmationModal modalInfo={deleteInfo} />}
+        {showModal && <PriorityProgressModal totalItems={items.length} />}
+        <div className="columns">
+          <div className="roi-form-section column is-three-fifths">
+            <RoiForm setObjectFunction={setObject} />
+          </div>
+          <div className="list column">
+            <h4 className="title is-4 center">Prioritisation List</h4>
+            {items.length === 0 && <div className="center">
+              <img className="noresult-image" src={noResultImage} alt="No results" />
+              <p>There are no tasks added to prioritise yet. <br />Get started by adding a task.</p>
+            </div>}
+            {usList}
+            {items.length > 0 && <div className="list-button">
+              <button className="button is-primary" onClick={prioritize}>Prioritise</button>
+              <div className="additional-buttons">
+                <button className="button is-excel" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
+                <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
+              </div>
+            </div>}
+          </div>
         </div>
       </div>
     </div>

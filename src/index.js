@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import 'bulma';
 import App from './App';
-import TheHeader from './components/TheHeader';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TheHeader />
     <div className="app"><App/></div>
-    <p className="center"><b>P.S</b>: Your data is not stored by us.</p>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,29 @@
+@import '../../App.scss';
+
+.home {
+    min-height: 100vh;
+}
+.left-section {
+    background-color: $navyblue;
+    min-height: 100vh;
+    .brand{padding:20px 40px;}
+    .title {color: white;}
+    .home-description {
+        padding: 50px 20px;
+        p {
+            color: white;
+            font-size: 1.5rem;
+            padding: 20px 0px;
+        }
+        .button {
+            margin: 30px 10px;
+        }
+        .bottom {
+            margin-top: 40%;
+        }
+    }
+}
+
+.right-section {
+    position: relative;
+}

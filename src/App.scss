@@ -1,6 +1,7 @@
 @charset "utf-8";
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400&display=swap');
 
 // Set your brand colors
 $navyblue: #004369;
@@ -36,8 +37,12 @@ $input-shadow: none;
 @import '../node_modules/bulma/sass/layout/hero.sass';
 @import '../node_modules/bulma/sass/layout/section.sass';
 
-.App {
+.prioritisation-tool  {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kanit', sans-serif;
 }
