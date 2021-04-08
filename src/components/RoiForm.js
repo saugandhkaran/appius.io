@@ -1,152 +1,155 @@
+import './RoiForm.scss';
+import { useState } from 'react';
 import FormEntries from '../resources/data/FormEntries';
 function RoiForm(props) {
+  const [counter, setCounter] = useState(0);
   const formEntries = new FormEntries();
-  const improvementOptions = Object.keys(formEntries.improvement).map((item) => {
+  const previous = () => {
+    setCounter(counter - 1);
+  }
+  const handleChange = (event) => {
+    if (event.target.name === 'name') {
+      props.setObjectFunction(event);
+      return;
+    }
+    if (event.target.name !== 'metrics') {
+      props.setObjectFunction(event);
+      setCounter(counter + 1);
+    }
+  }
+  const improvementOptions = Object.keys(formEntries.improvement).map((item, index) => {
     return (
-      <option value={item} key={item}>{formEntries.improvement[item]}</option>
+      <label className="radio column">
+        <input required onChange={handleChange} value={item} name="improvement" type="radio" key={index} />{formEntries.improvement[item]}
+      </label>
     )
   });
-  const impactedUsersOptions = Object.keys(formEntries.impactedUsers).map((item) => {
+  const impactedUsersOptions = Object.keys(formEntries.impactedUsers).map((item, index) => {
     return (
-      <option value={item} key={item}>{formEntries.impactedUsers[item]}</option>
+      <label className="radio column">
+        <input required onChange={handleChange} value={item} name="impactedUsers" type="radio" key={index} />{formEntries.impactedUsers[item]}
+      </label>
     )
   });
-  const frequencyOptions = Object.keys(formEntries.frequency).map((item) => {
+  const frequencyOptions = Object.keys(formEntries.frequency).map((item, index) => {
     return (
-      <option value={item} key={item}>{formEntries.frequency[item]}</option>
+      <label className="radio column">
+        <input required onChange={handleChange} value={item} name="frequency" type="radio" key={index} />{formEntries.frequency[item]}
+      </label>
     )
   });
-  const effortOptions = Object.keys(formEntries.effort).map((item) => {
+  const effortOptions = Object.keys(formEntries.effort).map((item, index) => {
     return (
-      <option value={item} key={item}>{formEntries.effort[item]}</option>
+      <label className="radio column">
+        <input required onChange={handleChange} value={item} name="efforts" type="radio" key={index} />{formEntries.effort[item]}
+      </label>
     )
   });
-  const dependencyOptions = Object.keys(formEntries.dependency).map((item) => {
+  const dependencyOptions = Object.keys(formEntries.dependency).map((item, index) => {
     return (
-      <option value={item} key={item}>{formEntries.dependency[item]}</option>
+      <label className="radio column">
+        <input required onChange={handleChange} value={item} name="dependency" type="radio" key={index} />{formEntries.dependency[item]}
+      </label>
     )
   });
+  const submitThyForm = (event) => {
+    event.preventDefault();
+    setCounter(0);
+    props.submitFormFunction(event);
+  }
 
   return (
-    <div>
+    <div className="column">
       <h4 className="title is-4 center roi-header">Prioritisation Tool</h4>
-      <form className="roi-form" onSubmit={props.setObjectFunction}>
+      <form className="roi-form" onSubmit={submitThyForm}>
         <div className="field">
           <div className="control">
-            <input name="name" required className="input" type="text" placeholder="Type task here*" />
+            <h4 className="title is-4">Task</h4>
+            <input onChange={handleChange} name="name" required className="input" type="text" placeholder="Type task here*" />
           </div>
         </div>
-        <div className="columns">
-          <div className="field column">
-            <label className="label">Customer Value
-            <span className="info"
-                type="tooltip"
-                data-description="This can be defined as the perceived value by the customer when modifying or creating this
-                 feature. Think about how much is this task is going to ease the journey of the customer.">i</span></label>
-            <div className="control">
-              <div className="select">
-                <select required name="improvement">
-                  <option value="">Select</option>
-                  {improvementOptions}
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="field column">
-            <label className="label">Impacted users
-            <span className="info"
-                type="tooltip"
-                data-description="Focus on positive impact. How much percentage of your existing users will be positively impacted
-                 after implementing this task?">i</span></label>
-            <div className="control">
-              <div className="select">
-                <select required name="impactedUsers">
-                  <option value="">Select</option>
-                  {impactedUsersOptions}
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="field column">
-            <label className="label">Frequency of use case
-            <span className="info"
-                type="tooltip"
-                data-description="How often does the customer experience the issue that is solved by the task?">i</span></label>
-            <div className="control">
-              <div className="select">
-                <select required name="frequency">
-                  <option value="">Select</option>
-                  {frequencyOptions}
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="columns">
-          <div className="field column">
-            <label className="label">Effort
-            <span className="info"
-                type="tooltip"
-                data-description="What is the effort needed to complete the task?
-                XXL being the highest and XS being the lowest.">i</span></label>
-            <div className="control">
-              <div className="select">
-                <select required name="efforts">
-                  <option value="">Select</option>
-                  {effortOptions}
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="field column">
-            <label className="label">Dependency
-              <span className="info"
-                type="tooltip"
-                data-description="Are there any dependencies on other teams to complete this task?">i</span>
-            </label>
-            <div className="control">
-              <div className="select">
-                <select required name="dependency">
-                  <option value="">Select</option>
-                  {dependencyOptions}
-                </select>
-              </div>
-            </div>
-          </div>
+        <h4 className="title is-4"></h4>
+        <progress className="progress" value={counter*20} max="100"></progress>
 
-          {/* <div className="field column">
+        {counter === 0 && <div className="field animate__animated animate__fadeIn custom-field">
+          <h4 className="label title is-4">Customer Value</h4>
+          <p className="field-description">This can be defined as the perceived value by the customer when modifying or creating this
+                 feature. Think about how much is this task is going to ease the journey of the customer.</p>
+          <div className="control">
+            <div className="radio">
+              {improvementOptions}
+            </div>
+          </div>
+        </div>}
+        {counter === 1 && <div className="field animate__animated animate__fadeIn custom-field">
+          <h4 className="label title is-4">Impacted Users</h4>
+          <p className="field-description">Focus on positive impact. How much percentage of your existing users will be positively impacted after implementing this task?</p>
+          <div className="control">
+            <div className="radio">
+              {impactedUsersOptions}
+            </div>
+          </div>
+        </div>}
+        {counter === 2 && <div className="field animate__animated animate__fadeIn custom-field">
+          <h4 className="label title is-4">Frequency of use case</h4>
+          <p className="field-description">How often does the customer experience the issue that is solved by the task?</p>
+          <div className="control">
+            <div className="radio">
+              {frequencyOptions}
+            </div>
+          </div>
+        </div>}
+        {counter === 3 && <div className="field animate__animated animate__fadeIn custom-field">
+          <h4 className="label title is-4">Effort</h4>
+          <p className="field-description">What is the effort needed to complete the task?
+                XXL being the highest and XS being the lowest.</p>
+          <div className="control">
+            <div className="radio">
+              {effortOptions}
+            </div>
+          </div>
+        </div>}
+        {counter === 4 && <div className="field animate__animated animate__fadeIn custom-field">
+          <h4 className="label title is-4">Dependency</h4>
+          <p className="field-description">Are there any dependencies on other teams to complete this task?</p>
+          <div className="control">
+            <div className="radio">
+              {dependencyOptions}
+            </div>
+          </div>
+        </div>}
+
+        {/* <div className="field column">
           <label className="label">Extra info</label>
           <div className="control">
             <input name="remarks" className="input" type="text" placeholder="Extra info" />
           </div>
         </div> */}
-        </div>
-        <div className="field">
-          <label className="label">KPI Section
-          <span className="info"
-              type="tooltip"
-              data-description="Which KPIs does completion of this task help you in? Multiple KPIs can be selected.">i</span></label>
+        {counter === 5 && <div className="field animate__animated animate__fadeIn custom-field">
+        <h4 className="label title is-4">KPI section</h4>
+        <p className="field-description">Which KPIs does completion of this task help you in? Multiple KPIs can be selected.</p>
           <div className="columns">
             <label className="checkbox column">
-              <input type="checkbox" value="Acquisition" name="metrics" />
+              <input onChange={handleChange} type="checkbox" value="Acquisition" name="metrics" />
             Acquisition
           </label>
             <label className="checkbox column">
-              <input type="checkbox" value="Onboarding" name="metrics" />
+              <input onChange={handleChange} type="checkbox" value="Onboarding" name="metrics" />
             Onboarding
           </label>
             <label className="checkbox column">
-              <input type="checkbox" value="Activation" name="metrics" />
+              <input onChange={handleChange} type="checkbox" value="Activation" name="metrics" />
             Activation
           </label>
             <label className="checkbox column">
-              <input type="checkbox" value="Retention" name="metrics" />
+              <input onChange={handleChange} type="checkbox" value="Retention" name="metrics" />
             Retention
           </label>
           </div>
-        </div>
-        <div className="field column center">
-          <button className="button is-primary" type="submit">Add for prioritisation</button>
+        </div>}
+        <div className="field form-control-buttons">
+          {counter > 0 && <button className="button is-primary" onClick={previous} type="button">Previous</button>}
+          {counter === 5 && <button className="button is-info" type="submit">Prioritise</button>}
         </div>
       </form>
       <br /><br />

@@ -1,0 +1,35 @@
+@import '../App.scss';
+
+.custom-field {
+    width: 100%;
+    padding: 20px;
+    background-color: $primary;
+    h4 {
+        color: white;
+        font-size: 1.5em;
+        margin-bottom: 5px !important;
+    }
+    .field-description {
+        color: $teal;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    .radio, .checkbox {
+        color: white;
+        input[type=radio] {
+            margin: 10px 10px 10px 0px;
+        }
+    }
+    .radio + .radio {
+        margin-left: 0px;
+    }
+}
+
+.progress{
+    border: 1px solid black;
+}
+
+.form-control-buttons {
+    display: flex;
+    justify-content: space-between;
+}

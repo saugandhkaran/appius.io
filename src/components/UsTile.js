@@ -28,7 +28,6 @@ function UsTile(props) {
       </div>
       {/* <footer class="card-footer">
         <p class="card-footer-item">Remove task</p>
-        Pearl Zhu, Digital Agility: The Rocky Road from Doing Agile to Being Agile
       </footer> */}
     </div>)
 }
