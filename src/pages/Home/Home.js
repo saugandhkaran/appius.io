@@ -7,7 +7,7 @@ function Home() {
       <div className="column left-section">
         <h2 className="title is-2 brand">Appius.io</h2>
         <div className="home-description">
-          <p className="center">A tool to help Product Owners prioritise thier tasks <br />and follow the correct direction.</p>
+          <p className="center">A tool to help Product Owners prioritise their tasks <br />and follow the correct direction.</p>
           <div className="center">
             <Link to="/prioritytool"><button className="button is-info">Get started</button></Link>
           </div>

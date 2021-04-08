@@ -4,6 +4,13 @@
     .title-description {
         padding-bottom: 10px;
     }
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        p {
+            color: whitesmoke;
+        }
+    }
 }
 .custom-field {
     width: 100%;

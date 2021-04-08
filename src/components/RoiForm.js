@@ -73,7 +73,7 @@ function RoiForm(props) {
         <progress className="progress" value={counter*20} max="100"></progress>
 
         {counter === 0 && <div className="field animate__animated animate__fadeIn custom-field">
-          <h4 className="label title is-4">Customer Value</h4>
+          <div className="flex"><h4 className="label title is-4">Customer Value</h4><p>Question {counter + 1}/6</p></div>
           <p className="field-description">This can be defined as the perceived value by the customer when modifying or creating this
                  feature. Think about how much is this task is going to ease the journey of the customer.</p>
           <div className="control">
@@ -83,7 +83,7 @@ function RoiForm(props) {
           </div>
         </div>}
         {counter === 1 && <div className="field animate__animated animate__fadeIn custom-field">
-          <h4 className="label title is-4">Impacted Users</h4>
+          <div className="flex"><h4 className="label title is-4">Impacted Users</h4><p>Question {counter + 1}/6</p></div>
           <p className="field-description">Focus on positive impact. How much percentage of your existing users will be positively impacted after implementing this task?</p>
           <div className="control">
             <div className="radio">
@@ -92,7 +92,7 @@ function RoiForm(props) {
           </div>
         </div>}
         {counter === 2 && <div className="field animate__animated animate__fadeIn custom-field">
-          <h4 className="label title is-4">Frequency of use case</h4>
+          <div className="flex"><h4 className="label title is-4">Frequency of use case</h4><p>Question {counter + 1}/6</p></div>
           <p className="field-description">How often does the customer experience the issue that is solved by the task?</p>
           <div className="control">
             <div className="radio">
@@ -101,7 +101,7 @@ function RoiForm(props) {
           </div>
         </div>}
         {counter === 3 && <div className="field animate__animated animate__fadeIn custom-field">
-          <h4 className="label title is-4">Effort</h4>
+          <div className="flex"><h4 className="label title is-4">Effort</h4><p>Question {counter + 1}/6</p></div>
           <p className="field-description">What is the effort needed to complete the task?
                 XXL being the highest and XS being the lowest.</p>
           <div className="control">
@@ -111,7 +111,7 @@ function RoiForm(props) {
           </div>
         </div>}
         {counter === 4 && <div className="field animate__animated animate__fadeIn custom-field">
-          <h4 className="label title is-4">Dependency</h4>
+          <div className="flex"><h4 className="label title is-4">Dependency</h4><p>Question {counter + 1}/6</p></div>
           <p className="field-description">Are there any dependencies on other teams to complete this task?</p>
           <div className="control">
             <div className="radio">
@@ -127,7 +127,7 @@ function RoiForm(props) {
           </div>
         </div> */}
         {counter === 5 && <div className="field animate__animated animate__fadeIn custom-field">
-        <h4 className="label title is-4">KPI section</h4>
+        <div className="flex"><h4 className="label title is-4">KPI section</h4><p>Question {counter + 1}/6</p></div>
         <p className="field-description">Which KPIs does completion of this task help you in? Multiple KPIs can be selected.</p>
           <div className="columns">
             <label className="checkbox column">
