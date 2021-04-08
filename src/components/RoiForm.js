@@ -65,6 +65,7 @@ function RoiForm(props) {
         <div className="field">
           <div className="control">
             <h4 className="title is-4">Task</h4>
+            <p className="title-description">Add a task and answer the questions below so as to help us calculate the value score of the task for you.</p>
             <input onChange={handleChange} name="name" required className="input" type="text" placeholder="Type task here*" />
           </div>
         </div>
