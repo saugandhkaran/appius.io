@@ -6,10 +6,12 @@ import noResultImage from '../../resources/assets/no-result.svg';
 import ConfirmationModal from '../../components/ConfirmationModal';
 import JsonTOCSV from '../../utils/JsonToCSV';
 import TheHeader from '../../components/TheHeader';
+import TableViewList from '../../components/TableViewList';
 
 function PrioritisationTool() {
   const [items, setItems] = useState([]);
   const [showClearConfirmation, setShowClearConfirmation] = useState(false);
+  const [showTableView, setShowTableView] = useState(false);
   const obj = {
     metrics: []
   };
@@ -49,11 +51,24 @@ function PrioritisationTool() {
     closeModal: () => setShowClearConfirmation(false)
   }
 
+  const tableDataInfo = {
+    type: 'show',
+    typeAction: clearAllItems,
+    title: 'Table View',
+    description: <TableViewList itemList={items} />,
+    closeModal: () => setShowTableView(false)
+  }
+
+  const tableMode = () => {
+
+  }
+
   return (
     <div>
       <TheHeader />
       <div className="prioritisation-tool animate__animated animate__fadeIn">
         {showClearConfirmation && <ConfirmationModal modalInfo={deleteInfo} />}
+        {showTableView && <ConfirmationModal modalInfo={tableDataInfo} />}
         <div className="columns">
           <div className="roi-form-section column is-three-fifths">
             <RoiForm setObjectFunction={setObject} submitFormFunction={submitForm}/>
@@ -69,7 +84,7 @@ function PrioritisationTool() {
               {/* <button className="button is-primary" onClick={prioritize}>Prioritise</button> */}
               <div className="additional-buttons">
                 <button className="button is-excel" onClick={() => JsonTOCSV(items)}>Export to Excel</button>
-                {/* <button className="button is-primary" onClick={() => JsonTOCSV(items)}>Sort List</button> */}
+                <button className="button is-primary" onClick={() => setShowTableView(true)}>Table view</button>
                 <button className="button is-danger" onClick={() => setShowClearConfirmation(true)}>Clear all</button>
               </div>
             </div>}

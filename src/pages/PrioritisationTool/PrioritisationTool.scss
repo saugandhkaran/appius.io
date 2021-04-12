@@ -71,9 +71,14 @@
     p, .title {
       margin-bottom: 10px;
     }
-    .modal-content {
-      button {
-        margin: 10px;
+    button {
+      margin: 10px;
+    }
+    @media screen and (min-width:769px) {
+      .modal-content {
+        width: 1200px;
+        max-height: 80vh;
+        
       }
     }
   }
