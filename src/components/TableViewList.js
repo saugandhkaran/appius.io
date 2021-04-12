@@ -18,8 +18,8 @@ function TableViewList(props) {
     )
   })
   return (
-    <div class="table=container">
-    <table class="table is-hoverable">
+    <div className="table-container">
+    <table className="table is-hoverable">
       <thead>
         <tr>
           <th>Sl no</th>

@@ -47,7 +47,7 @@ function PrioritisationTool() {
     type: 'clear',
     typeAction: clearAllItems,
     title: 'Are you sure you want to clear the list?',
-    description: 'Once deleted, you will lose the tasks along with the value score.',
+    description: <p>Once deleted, you will lose the tasks along with the value score.</p>,
     closeModal: () => setShowClearConfirmation(false)
   }
 
