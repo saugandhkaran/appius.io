@@ -6,11 +6,11 @@ function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route path="/prioritytool">
           <PrioritisationTool />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </BrowserRouter>
