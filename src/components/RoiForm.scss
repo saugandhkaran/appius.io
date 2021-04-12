@@ -8,16 +8,16 @@
         display: flex;
         justify-content: space-between;
         p {
-            color: whitesmoke;
+            color: $primary;
         }
     }
 }
 .custom-field {
     width: 100%;
     padding: 20px;
-    background-color: $primary;
+    background-color: #10699c3d;
     h4 {
-        color: white;
+        color: $primary;
         font-size: 1.5em;
         margin-bottom: 5px !important;
     }
@@ -27,7 +27,7 @@
         margin-bottom: 10px;
     }
     .radio, .checkbox {
-        color: white;
+        color: $primary;
         input[type=radio] {
             margin: 10px 10px 10px 0px;
         }
@@ -38,7 +38,8 @@
 }
 
 .progress{
-    border: 1px solid black;
+    border: 1px solid $primary;
+    height: 5px;
 }
 
 .form-control-buttons {

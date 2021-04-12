@@ -69,85 +69,89 @@ function RoiForm(props) {
             <input onChange={handleChange} name="name" required className="input" type="text" placeholder="Type task here*" />
           </div>
         </div>
-        <h4 className="title is-4"></h4>
-        <progress className="progress" value={counter*20} max="100"></progress>
-
-        {counter === 0 && <div className="field animate__animated animate__fadeIn custom-field">
-          <div className="flex"><h4 className="label title is-4">Customer Value</h4><p>Question {counter + 1}/6</p></div>
-          <p className="field-description">This can be defined as the perceived value by the customer when modifying or creating this
-                 feature. Think about how much is this task is going to ease the journey of the customer.</p>
-          <div className="control">
-            <div className="radio">
-              {improvementOptions}
+        <div className="field custom-field">
+          <progress className="progress" value={counter * 20} max="100"></progress>
+          {counter === 0 && <div className="animate__animated animate__fadeIn">
+            <div className="flex"><h4 className="label title is-4">Added Value</h4><p>Question {counter + 1}/6</p></div>
+            <p className="field-description">This can be defined as the perceived value by the user when modifying or creating this
+                 feature. Think about how much is this task is going to ease the journey or enhance the way of working.</p>
+            <div className="control">
+              <div className="radio">
+                {improvementOptions}
+              </div>
             </div>
-          </div>
-        </div>}
-        {counter === 1 && <div className="field animate__animated animate__fadeIn custom-field">
-          <div className="flex"><h4 className="label title is-4">Impacted Users</h4><p>Question {counter + 1}/6</p></div>
-          <p className="field-description">Focus on positive impact. How much percentage of your existing users will be positively impacted after implementing this task?</p>
-          <div className="control">
-            <div className="radio">
-              {impactedUsersOptions}
+          </div>}
+          {counter === 1 && <div className="animate__animated animate__fadeIn">
+            <div className="flex"><h4 className="label title is-4">Impacted Users</h4><p>Question {counter + 1}/6</p></div>
+            <p className="field-description">Focus on positive impact. How much percentage of your existing users will be positively impacted after implementing this task?</p>
+            <div className="control">
+              <div className="radio">
+                {impactedUsersOptions}
+              </div>
             </div>
-          </div>
-        </div>}
-        {counter === 2 && <div className="field animate__animated animate__fadeIn custom-field">
-          <div className="flex"><h4 className="label title is-4">Frequency of use case</h4><p>Question {counter + 1}/6</p></div>
-          <p className="field-description">How often does the customer experience the issue that is solved by the task?</p>
-          <div className="control">
-            <div className="radio">
-              {frequencyOptions}
+          </div>}
+          {counter === 2 && <div className="animate__animated animate__fadeIn">
+            <div className="flex"><h4 className="label title is-4">Frequency of use case</h4><p>Question {counter + 1}/6</p></div>
+            <p className="field-description">How often does the user experience the issue that is solved by the task?</p>
+            <div className="control">
+              <div className="radio">
+                {frequencyOptions}
+              </div>
             </div>
-          </div>
-        </div>}
-        {counter === 3 && <div className="field animate__animated animate__fadeIn custom-field">
-          <div className="flex"><h4 className="label title is-4">Effort</h4><p>Question {counter + 1}/6</p></div>
-          <p className="field-description">What is the effort needed to complete the task?
+          </div>}
+          {counter === 3 && <div className="animate__animated animate__fadeIn">
+            <div className="flex"><h4 className="label title is-4">Effort</h4><p>Question {counter + 1}/6</p></div>
+            <p className="field-description">What is the effort needed to complete the task?
                 XXL being the highest and XS being the lowest.</p>
-          <div className="control">
-            <div className="radio">
-              {effortOptions}
+            <div className="control">
+              <div className="radio">
+                {effortOptions}
+              </div>
             </div>
-          </div>
-        </div>}
-        {counter === 4 && <div className="field animate__animated animate__fadeIn custom-field">
-          <div className="flex"><h4 className="label title is-4">Dependency</h4><p>Question {counter + 1}/6</p></div>
-          <p className="field-description">Are there any dependencies on other teams to complete this task?</p>
-          <div className="control">
-            <div className="radio">
-              {dependencyOptions}
+          </div>}
+          {counter === 4 && <div className="animate__animated animate__fadeIn">
+            <div className="flex"><h4 className="label title is-4">Dependency</h4><p>Question {counter + 1}/6</p></div>
+            <p className="field-description">Are there any dependencies on other teams to complete this task?</p>
+            <div className="control">
+              <div className="radio">
+                {dependencyOptions}
+              </div>
             </div>
-          </div>
-        </div>}
+          </div>}
 
-        {/* <div className="field column">
+          {/* <div className="field column">
           <label className="label">Extra info</label>
           <div className="control">
             <input name="remarks" className="input" type="text" placeholder="Extra info" />
           </div>
         </div> */}
-        {counter === 5 && <div className="field animate__animated animate__fadeIn custom-field">
-        <div className="flex"><h4 className="label title is-4">KPI section</h4><p>Question {counter + 1}/6</p></div>
-        <p className="field-description">Which KPIs does completion of this task help you in? Multiple KPIs can be selected.</p>
-          <div className="columns">
-            <label className="checkbox column">
-              <input onChange={handleChange} type="checkbox" value="Acquisition" name="metrics" />
-            Acquisition
-          </label>
-            <label className="checkbox column">
-              <input onChange={handleChange} type="checkbox" value="Onboarding" name="metrics" />
-            Onboarding
-          </label>
-            <label className="checkbox column">
-              <input onChange={handleChange} type="checkbox" value="Activation" name="metrics" />
-            Activation
-          </label>
-            <label className="checkbox column">
-              <input onChange={handleChange} type="checkbox" value="Retention" name="metrics" />
-            Retention
-          </label>
-          </div>
-        </div>}
+          {counter === 5 && <div className="animate__animated animate__fadeIn">
+            <div className="flex"><h4 className="label title is-4">KPI section</h4><p>Question {counter + 1}/6</p></div>
+            <p className="field-description">Which KPIs does completion of this task influence? Multiple KPIs can be selected.</p>
+            <div className="columns">
+              <label className="checkbox column">
+                <input onChange={handleChange} type="checkbox" value="Acquisition" name="metrics" />
+                  Acquisition
+              </label>
+              <label className="checkbox column">
+                <input onChange={handleChange} type="checkbox" value="Onboarding" name="metrics" />
+                Onboarding
+              </label>
+              <label className="checkbox column">
+                <input onChange={handleChange} type="checkbox" value="Activation" name="metrics" />
+                Activation
+              </label>
+              <label className="checkbox column">
+                <input onChange={handleChange} type="checkbox" value="Retention" name="metrics" />
+                Retention
+              </label>
+              <label className="checkbox column">
+                <input onChange={handleChange} type="checkbox" value="IT4IT" name="metrics" />
+                IT4IT
+              </label>
+            </div>
+          </div>}
+        </div>
         <div className="field form-control-buttons">
           {counter > 0 && <button className="button is-primary" onClick={previous} type="button">Previous</button>}
           {counter === 5 && <button className="button is-info" type="submit">Prioritise</button>}

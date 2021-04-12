@@ -21,8 +21,8 @@ function UsTile(props) {
           Impacts <b>{formula.impactedUsers[props.items.impactedUsers]} </b>
            of users at a <b>{formula.frequency[props.items.frequency]} </b>
           frequency and has the scope of improvement upto <b>
-            {formula.improvement[props.items.improvement]} </b>
-            It has <b>{formula.dependency[props.items.dependency]} </b>dependency on other teams.
+            {formula.improvement[props.items.improvement]}. </b>
+            It has <b>{formula.dependency[props.items.dependency]} </b> on other teams.
           {props.items.metrics.length > 0 && <p>KPI - {metrics} </p>}
         </div>
       </div>

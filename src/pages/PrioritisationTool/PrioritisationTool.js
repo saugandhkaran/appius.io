@@ -59,7 +59,7 @@ function PrioritisationTool() {
             <RoiForm setObjectFunction={setObject} submitFormFunction={submitForm}/>
           </div>
           <div className="list column">
-            <h4 className="title is-4 center">Prioritisation List</h4>
+            <h4 className="title is-4 center">List of tasks</h4>
             {items.length === 0 && <div className="center">
               <img className="noresult-image" src={noResultImage} alt="No results" />
               <p>There are no tasks added to prioritise yet. <br />Get started by adding a task.</p>

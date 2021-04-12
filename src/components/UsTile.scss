@@ -1,5 +1,18 @@
+@import '../App.scss';
 .card-footer{
     .card-footer-item {
         cursor: pointer;
     }
 }
+
+.value-score {
+    background-color: #10699c3d;
+    h4 {
+      color: $primary;
+    }
+    p {
+      color: $primary;
+      font-size: 0.8em;
+      padding: 2px 10px;
+    }
+  }
