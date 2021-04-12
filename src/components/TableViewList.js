@@ -6,13 +6,13 @@ function TableViewList(props) {
     return (
       <tr>
         <th>{index + 1}</th>
-        <th>{item.name}</th>
-        <th>{formEntries.impactedUsers[item.impactedUsers]}</th>
-        <th>{formEntries.frequency[item.frequency]}</th>
-        <th>{formEntries.improvement[item.improvement]}</th>
-        <th>{formEntries.effort[item.efforts]}</th>
-        <th>{formEntries.dependency[item.dependency]}</th>
-        <th>{metrics}</th>
+        <td>{item.name}</td>
+        <td>{formEntries.impactedUsers[item.impactedUsers]}</td>
+        <td>{formEntries.frequency[item.frequency]}</td>
+        <td>{formEntries.improvement[item.improvement]}</td>
+        <td>{formEntries.effort[item.efforts]}</td>
+        <td>{formEntries.dependency[item.dependency]}</td>
+        <td>{metrics}</td>
         <th className="tag is-primary is-light is-large">{item.prio}</th>
       </tr>
     )
