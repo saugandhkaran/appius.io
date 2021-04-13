@@ -26,9 +26,9 @@ function UsTile(props) {
           {props.items.metrics.length > 0 && <p>KPI - {metrics} </p>}
         </div>
       </div>
-      {/* <footer class="card-footer">
-        <p class="card-footer-item">Remove task</p>
-      </footer> */}
+      <footer className="card-footer">
+        <p className="card-footer-item" onClick={() => props.remove(props.index)}>Remove task</p>
+      </footer>
     </div>)
 }
 

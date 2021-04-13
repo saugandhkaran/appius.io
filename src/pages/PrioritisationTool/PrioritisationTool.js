@@ -32,7 +32,12 @@ function PrioritisationTool() {
     event.target.reset();
   }
 
-  let usList = items.map((item) => <UsTile items={item} key={item.name} />);
+  const removeTask = (index) => {
+    items.splice(index, 1);
+    setItems([...items]);
+  }
+
+  let usList = items.map((item, index) => <UsTile items={item} key={index} index={index} remove={removeTask}/>);
 
   const prioritize = (item) => {
     item.prio = ((+item.improvement * +item.impactedUsers * +item.frequency * +item.dependency * (item.metrics.length + 1)) / item.efforts).toFixed(1);
