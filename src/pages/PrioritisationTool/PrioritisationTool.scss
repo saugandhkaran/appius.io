@@ -39,6 +39,11 @@
           flex-wrap: wrap;
         }
     };
+
+    .sort-options {
+      @extend .list-button;
+      margin-top: 0;
+    }
   }
   
   .progress-images {

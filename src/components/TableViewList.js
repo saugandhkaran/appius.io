@@ -1,6 +1,6 @@
 import FormEntries from '../resources/data/FormEntries';
 function TableViewList(props) {
-  const formEntries = new FormEntries;
+  const formEntries = new FormEntries();
   const tableValues = props.itemList.map((item, index) => {
     const metrics = item.metrics.map((metric, index) => <span key={index} className="tag is-info is-light">{metric}</span>)
     return (

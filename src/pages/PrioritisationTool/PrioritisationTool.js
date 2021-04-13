@@ -59,8 +59,11 @@ function PrioritisationTool() {
     closeModal: () => setShowTableView(false)
   }
 
-  const tableMode = () => {
-
+  const sortItems = (event) => {
+    if (event.target.value) {
+      let sortedItems = items.sort((a,b) => b[event.target.value] - a[event.target.value]);
+      setItems([...sortedItems]);
+    }
   }
 
   return (
@@ -78,6 +81,23 @@ function PrioritisationTool() {
             {items.length === 0 && <div className="center">
               <img className="noresult-image" src={noResultImage} alt="No results" />
               <p>There are no tasks added to prioritise yet. <br />Get started by adding a task.</p>
+            </div>}
+            {items.length > 1 && <div className="sort-options">
+              <div className="additional-buttons">
+                <p>Sort tasks by </p>
+                <div className="select is-small">
+                  <select onChange={sortItems}>
+                    <option value="">---</option>
+                    <option value="name">Name ↓</option>
+                    <option value="prio">Value Score ↓</option>
+                    <option value="improvement">Added Value ↓</option>
+                    <option value="impactedUsers">Affected Users ↓</option>
+                    <option value="dependency">Depedency ↓</option>
+                    <option value="efforts">Efforts ↓</option>
+                    <option value="frequency">Frequency ↓</option>
+                  </select>
+                </div>
+              </div>
             </div>}
             {usList}
             {items.length > 0 && <div className="list-button">

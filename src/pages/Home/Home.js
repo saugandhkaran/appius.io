@@ -16,7 +16,7 @@ function Home() {
         </div>
       </div>
       <div className="column right-section">
-        <img src={landingImage} alt="landing image" />
+        <img src={landingImage} alt="landing" />
       </div>
     </div>
   )

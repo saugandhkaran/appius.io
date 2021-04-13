@@ -19,36 +19,36 @@ function RoiForm(props) {
   }
   const improvementOptions = Object.keys(formEntries.improvement).map((item, index) => {
     return (
-      <label className="radio column">
-        <input required onChange={handleChange} value={item} name="improvement" type="radio" key={index} />{formEntries.improvement[item]}
+      <label className="radio column" key={index}>
+        <input required onChange={handleChange} value={item} name="improvement" type="radio" />{formEntries.improvement[item]}
       </label>
     )
   });
   const impactedUsersOptions = Object.keys(formEntries.impactedUsers).map((item, index) => {
     return (
-      <label className="radio column">
-        <input required onChange={handleChange} value={item} name="impactedUsers" type="radio" key={index} />{formEntries.impactedUsers[item]}
+      <label className="radio column" key={index}>
+        <input required onChange={handleChange} value={item} name="impactedUsers" type="radio" />{formEntries.impactedUsers[item]}
       </label>
     )
   });
   const frequencyOptions = Object.keys(formEntries.frequency).map((item, index) => {
     return (
-      <label className="radio column">
-        <input required onChange={handleChange} value={item} name="frequency" type="radio" key={index} />{formEntries.frequency[item]}
+      <label className="radio column" key={index}>
+        <input required onChange={handleChange} value={item} name="frequency" type="radio" />{formEntries.frequency[item]}
       </label>
     )
   });
   const effortOptions = Object.keys(formEntries.effort).map((item, index) => {
     return (
-      <label className="radio column">
-        <input required onChange={handleChange} value={item} name="efforts" type="radio" key={index} />{formEntries.effort[item]}
+      <label className="radio column" key={index}>
+        <input required onChange={handleChange} value={item} name="efforts" type="radio" />{formEntries.effort[item]}
       </label>
     )
   });
   const dependencyOptions = Object.keys(formEntries.dependency).map((item, index) => {
     return (
-      <label className="radio column">
-        <input required onChange={handleChange} value={item} name="dependency" type="radio" key={index} />{formEntries.dependency[item]}
+      <label className="radio column" key={index}>
+        <input required onChange={handleChange} value={item} name="dependency" type="radio" />{formEntries.dependency[item]}
       </label>
     )
   });
