@@ -93,11 +93,11 @@ function PrioritisationTool() {
                 <div className="select is-small">
                   <select onChange={sortItems}>
                     <option value="">---</option>
-                    <option value="name">Name ↓</option>
+                    {/* <option value="name">Name ↓</option> */}
                     <option value="prio">Value Score ↓</option>
                     <option value="improvement">Added Value ↓</option>
                     <option value="impactedUsers">Affected Users ↓</option>
-                    <option value="dependency">Depedency ↓</option>
+                    <option value="dependency">Dependency ↓</option>
                     <option value="efforts">Efforts ↓</option>
                     <option value="frequency">Frequency ↓</option>
                   </select>
