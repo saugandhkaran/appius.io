@@ -52,7 +52,7 @@ function PrioritisationTool() {
     type: 'clear',
     typeAction: clearAllItems,
     title: 'Are you sure you want to clear the list?',
-    description: <p>Once deleted, you will lose the tasks along with the value score.</p>,
+    description: <p>Once deleted, you will lose the initiatives along with the value score.</p>,
     closeModal: () => setShowClearConfirmation(false)
   }
 
@@ -82,14 +82,14 @@ function PrioritisationTool() {
             <RoiForm setObjectFunction={setObject} submitFormFunction={submitForm}/>
           </div>
           <div className="list column">
-            <h4 className="title is-4 center">List of tasks</h4>
+            <h4 className="title is-4 center">List of initiatives</h4>
             {items.length === 0 && <div className="center">
               <img className="noresult-image" src={noResultImage} alt="No results" />
-              <p>There are no tasks added to prioritise yet. <br />Get started by adding a task.</p>
+              <p>There are no initiatives added to prioritise yet. <br />Get started by adding a task.</p>
             </div>}
             {items.length > 1 && <div className="sort-options">
               <div className="additional-buttons">
-                <p>Sort tasks by </p>
+                <p>Sort initiatives by </p>
                 <div className="select is-small">
                   <select onChange={sortItems}>
                     <option value="">---</option>

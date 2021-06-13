@@ -23,7 +23,7 @@ function TableViewList(props) {
       <thead>
         <tr>
           <th>Sl no</th>
-          <th>Task</th>
+          <th>Initiative</th>
           <th>Added Value</th>
           <th>Frequency</th>
           <th>Improvement</th>

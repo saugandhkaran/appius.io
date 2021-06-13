@@ -64,9 +64,9 @@ function RoiForm(props) {
       <form className="roi-form" onSubmit={submitThyForm}>
         <div className="field">
           <div className="control">
-            <h4 className="title is-4">Task</h4>
-            <p className="title-description">Add a task and answer the questions below so as to help us calculate the value score of the task for you.</p>
-            <input onChange={handleChange} name="name" required className="input" type="text" placeholder="Type task here*" />
+            <h4 className="title is-4">Initiative</h4>
+            <p className="title-description">Add an initiative and answer the questions below so as to help us calculate the value score of the initiative for you.</p>
+            <input onChange={handleChange} name="name" required className="input" type="text" placeholder="Type initiative here*" />
           </div>
         </div>
         <div className="field custom-field">
@@ -74,7 +74,7 @@ function RoiForm(props) {
           {counter === 0 && <div className="animate__animated animate__fadeIn">
             <div className="flex"><h4 className="label title is-4">Added Value</h4><p>Question {counter + 1}/6</p></div>
             <p className="field-description">This can be defined as the perceived value by the user when modifying or creating this
-                 feature. Think about how much is this task is going to ease the journey or enhance the way of working.</p>
+                 feature. Think about how much is this initiative is going to ease the journey or enhance the way of working.</p>
             <div className="control">
               <div className="radio">
                 {improvementOptions}
@@ -83,7 +83,7 @@ function RoiForm(props) {
           </div>}
           {counter === 1 && <div className="animate__animated animate__fadeIn">
             <div className="flex"><h4 className="label title is-4">Impacted Users</h4><p>Question {counter + 1}/6</p></div>
-            <p className="field-description">Focus on positive impact. How much percentage of your existing users will be positively impacted after implementing this task?</p>
+            <p className="field-description">Focus on positive impact. How much percentage of your existing users will be positively impacted after implementing this initiative?</p>
             <div className="control">
               <div className="radio">
                 {impactedUsersOptions}
@@ -92,7 +92,7 @@ function RoiForm(props) {
           </div>}
           {counter === 2 && <div className="animate__animated animate__fadeIn">
             <div className="flex"><h4 className="label title is-4">Frequency of use case</h4><p>Question {counter + 1}/6</p></div>
-            <p className="field-description">How often does the user experience the issue that is solved by the task?</p>
+            <p className="field-description">How often does the user experience the issue that is solved by the initiative?</p>
             <div className="control">
               <div className="radio">
                 {frequencyOptions}
@@ -101,7 +101,7 @@ function RoiForm(props) {
           </div>}
           {counter === 3 && <div className="animate__animated animate__fadeIn">
             <div className="flex"><h4 className="label title is-4">Effort</h4><p>Question {counter + 1}/6</p></div>
-            <p className="field-description">What is the effort needed to complete the task?
+            <p className="field-description">What is the effort needed to complete the initiative?
                 XXL being the highest and XS being the lowest.</p>
             <div className="control">
               <div className="radio">
@@ -111,7 +111,7 @@ function RoiForm(props) {
           </div>}
           {counter === 4 && <div className="animate__animated animate__fadeIn">
             <div className="flex"><h4 className="label title is-4">Dependency</h4><p>Question {counter + 1}/6</p></div>
-            <p className="field-description">Are there any dependencies on other teams to complete this task?</p>
+            <p className="field-description">Are there any dependencies on other teams to complete this initiative?</p>
             <div className="control">
               <div className="radio">
                 {dependencyOptions}
@@ -127,7 +127,7 @@ function RoiForm(props) {
         </div> */}
           {counter === 5 && <div className="animate__animated animate__fadeIn">
             <div className="flex"><h4 className="label title is-4">KPI section (optional)</h4><p>Question {counter + 1}/6</p></div>
-            <p className="field-description">Which KPIs does completion of this task influence? Multiple KPIs can be selected.</p>
+            <p className="field-description">Which KPIs does completion of this initiative influence? Multiple KPIs can be selected.</p>
             <div className="columns">
               <label className="checkbox column">
                 <input onChange={handleChange} type="checkbox" value="Acquisition" name="metrics" />
