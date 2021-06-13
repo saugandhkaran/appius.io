@@ -126,7 +126,7 @@ function RoiForm(props) {
           </div>
         </div> */}
           {counter === 5 && <div className="animate__animated animate__fadeIn">
-            <div className="flex"><h4 className="label title is-4">KPI section</h4><p>Question {counter + 1}/6</p></div>
+            <div className="flex"><h4 className="label title is-4">KPI section (optional)</h4><p>Question {counter + 1}/6</p></div>
             <p className="field-description">Which KPIs does completion of this task influence? Multiple KPIs can be selected.</p>
             <div className="columns">
               <label className="checkbox column">
