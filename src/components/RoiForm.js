@@ -129,10 +129,10 @@ function RoiForm(props) {
             <div className="flex"><h4 className="label title is-4">KPI section (optional)</h4><p>Question {counter + 1}/6</p></div>
             <p className="field-description">Which KPIs does completion of this initiative influence? Multiple KPIs can be selected.</p>
             <div className="columns">
-              <label className="checkbox column">
+              {/* <label className="checkbox column">
                 <input onChange={handleChange} type="checkbox" value="Acquisition" name="metrics" />
                   Acquisition
-              </label>
+              </label> */}
               <label className="checkbox column">
                 <input onChange={handleChange} type="checkbox" value="Onboarding" name="metrics" />
                 Onboarding
@@ -149,6 +149,11 @@ function RoiForm(props) {
                 <input onChange={handleChange} type="checkbox" value="IT4IT" name="metrics" />
                 IT4IT
               </label>
+              <label className="checkbox column">
+                <input onChange={handleChange} type="checkbox" value="Compliance" name="metrics" />
+                Compliance
+              </label>
+
             </div>
           </div>}
         </div>
